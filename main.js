@@ -17,6 +17,45 @@ const rockPaperScissors = (hand1, hand2) => {
   // Write code here
   // Use the unit test to see what is expected
 
+  hand1 = hand1.toLowerCase().trim();
+  hand2 = hand2.toLowerCase().trim();
+
+  if (hand1 === hand2) {
+    console.log("It's a tie!")
+    return "It's a tie!"
+
+  } else if (hand1 == 'rock' && hand2 == 'scissors') {
+    console.log("Hand one wins!")
+    return "Hand one wins!"
+  } else if (hand1 == 'paper' && hand2 == 'rock') {
+    console.log("Hand one wins!")
+    return "Hand one wins!"
+  } else if (hand1 == 'scissors' && hand2 == 'paper') {
+    console.log("Hand one wins!")
+    return "Hand one wins!"
+  } else if (hand1 == 'rock' && hand2 == 'paper') {
+    console.log("Hand two wins!")
+    return "Hand two wins!"
+  } else if (hand1 == 'paper' && hand2 == 'scissors') {
+    console.log("Hand two wins!")
+    return "Hand two wins!"
+  } else if (hand1 == 'scissors' && hand2 == 'rock') {
+    console.log("Hand two wins!")
+    return "Hand two wins!"
+  } else {
+    getPrompt()
+  }
+
+  // done 1. If User1 input is 'rock' and User2 input is 'rock', it's a tie.
+  // done 1. If User1 input is 'paper' and User2 input is 'paper', it's a tie.
+  // done 1. If User1 input is 'scissors' and User2 input is 'scissors', it's a tie.
+  // done 1. If User1 input is 'rock' and User2 input is 'scissors', User1 wins.
+  // done 1. If User1 input is 'paper' and User2 input is 'rock', User1 wins.
+  // done 1. If User1 input is 'scissors' and User2 input is 'paper', User1 wins.
+  // done 1. If User1 input is 'rock' and User2 input is 'paper', User2 wins.
+  //  done 1. If User1 input is 'paper' and User2 input is 'scissors', User2 wins.
+  // done 1. If User1 input is 'scissors' and User2 input is 'rock', User2 wins.
+
 }
 
 // the first function called in the program to get an input from the user
@@ -25,7 +64,7 @@ const rockPaperScissors = (hand1, hand2) => {
 function getPrompt() {
   rl.question('hand1: ', (answer1) => {
     rl.question('hand2: ', (answer2) => {
-      console.log( rockPaperScissors(answer1, answer2) );
+      console.log(rockPaperScissors(answer1, answer2));
       getPrompt();
     });
   });
